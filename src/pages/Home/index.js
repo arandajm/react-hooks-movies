@@ -8,6 +8,7 @@ import {
   Button
 } from "@material-ui/core";
 import styles from "./style";
+import { MovieIcon } from "../../icons";
 
 export default () => {
   const [searchText, setSearchText] = useState("");
@@ -32,10 +33,10 @@ export default () => {
         {/* This grid is similar to bootstrap col */}
         <Grid container className={classes.titleGridContainer}>
           <Grid>
-            <Typography className={classes.title}>Bienvenido!!</Typography>
+            <Typography className={classes.title}>Bienvenido!</Typography>
           </Grid>
           <Grid>
-            <label>Icono</label>
+            <MovieIcon className={classes.movieIcon} />
           </Grid>
         </Grid>
         <TextField
