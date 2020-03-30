@@ -7,9 +7,12 @@ import {
   TextField,
   Button
 } from "@material-ui/core";
+import styles from "./style";
 
 export default () => {
   const [searchText, setSearchText] = useState("");
+  // create a constant to use styles
+  const classes = styles();
 
   const handleSearchTextChange = e => {
     setSearchText(e.target.value);
@@ -24,12 +27,12 @@ export default () => {
 
   console.log(searchText);
   return (
-    <Container>
-      <Card>
+    <Container className={classes.container}>
+      <Card className={classes.cardContainer}>
         {/* This grid is similar to bootstrap col */}
-        <Grid container>
+        <Grid container className={classes.titleGridContainer}>
           <Grid>
-            <Typography>Bienvenido!!</Typography>
+            <Typography className={classes.title}>Bienvenido!!</Typography>
           </Grid>
           <Grid>
             <label>Icono</label>
@@ -39,12 +42,14 @@ export default () => {
           value={searchText}
           placeholder="Buscar..."
           onChange={handleSearchTextChange}
+          className={classes.textFieldSearch}
         />
-        <Grid>
+        <Grid className={classes.buttonsContainer}>
           <Button variant="contained" onClick={handleClearTextClick}>
             Limpiar
           </Button>
           <Button
+            className={classes.searchButton}
             variant="contained"
             color="primary"
             size="large"
