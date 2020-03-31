@@ -10,7 +10,7 @@ import {
 import styles from "./style";
 import { MovieIcon } from "../../icons";
 
-export default () => {
+export default ({ history }) => {
   const [searchText, setSearchText] = useState("");
   // create a constant to use styles
   const classes = styles();
@@ -20,10 +20,13 @@ export default () => {
   };
 
   const handleClearTextClick = e => {
-    console.log("handleClearTextClick", e);
+    // Call to setter function to clear the searchtext in the state
+    setSearchText("");
   };
+
   const handleSearchTextClick = e => {
-    console.log("handleSearchTextClick", e);
+    // Call to history.push to change the route and add query parameter called movieName
+    history.push(`/results?movieName=${searchText}`);
   };
 
   console.log(searchText);
