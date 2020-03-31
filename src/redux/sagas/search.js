@@ -9,12 +9,7 @@ import {
 // Generator function with *
 export function* searchMovies({ payload }) {
   try {
-    const searcMoviesData = yield call(getDemo, payload);
-
-    yield put({ type: SEARCH_MOVIES_SUCCESS, searcMoviesData });
-  } catch (error) {
-    yield put({ type: SEARCH_MOVIES_ERROR, error });
-  }
+  } catch (error) {}
 }
 
 export default function* search() {
