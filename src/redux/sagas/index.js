@@ -3,5 +3,5 @@ import searchSaga from "./search";
 
 // execute all the watchers here
 export default function* rootSaga() {
-  yield all([searchSaga]);
+  yield all([searchSaga()]);
 }
