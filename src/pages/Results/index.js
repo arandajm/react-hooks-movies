@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Container, CircularProgress } from "@material-ui/core";
 import queryString from "query-string";
@@ -12,12 +12,14 @@ export default ({ location }) => {
   // use movieResults selectors (movieResults and isSearchLoading) to get the data from the store
   const movies = useSelector(state => movieResults(state));
   const isLoading = useSelector(state => isSearchLoading(state));
-
+  const [isLooked, setIsLooked] = useState(false);
   useEffect(() => {
     // Extract the movie name from que query params (from location)
     const { movieName } = queryString.parse(location.search);
     // do dispatch only one time!
-    if (movieName && !movies) {
+    if (movieName && !isLooked) {
+      // set isLooked in true
+      setIsLooked(true);
       // Dispatch the search movies action
       dispatch(searchMoviesRequest({ movieName }));
     }

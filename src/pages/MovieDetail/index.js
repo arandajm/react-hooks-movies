@@ -6,7 +6,6 @@ import {
   movieResult as movieResultSelector,
   movieResults
 } from "../../redux/selectors/index";
-import MovieResult from "../../components/MovieResult";
 
 export default ({ match }) => {
   // use useDispatch()
@@ -16,7 +15,8 @@ export default ({ match }) => {
   useEffect(() => {
     // match is injected by react router
     const movieId = match.params.id;
-    if (!movieResult) {
+    // The second condition is neccesary to dispatch searchMovieById when we select other movie with different id
+    if (!movieResult || (movieResult && movieResult.imdbID !== movieId)) {
       dispatch(searchMovieByIdRequest({ movieId }));
     }
   });
