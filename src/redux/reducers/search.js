@@ -24,7 +24,6 @@ export default function(state = initialSate, action) {
     case SEARCH_MOVIE_BY_ID_REQUEST:
       return { ...state, isLoading: true, movieResult: null };
     case SEARCH_MOVIE_BY_ID_SUCCESS:
-      console.log(action);
       return {
         ...state,
         isLoading: false,
