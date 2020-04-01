@@ -1,4 +1,8 @@
-React application using hooks.
+React application is developed in React without using any class component using the React.Js Hooks added in version 16.8.0.
+
+The content of this course is focused on implementing useState and useEffect, the main hooks for managing states in our functional components. We are also going to use React-Redux in its version 7.1.0 (June 2019) that includes useDispatch and useSelector to communicate our React Hooks with the redux store. To stylize our project we will use makeStyles of Material.UI (which is also a hook) to create styles with Javascript
+
+The project consists of creating a movie search engine using the IMDB API, using search by title of the movie or television show. When the API gives us results, we will show them in a list with very brief information and if the user wants to see more detail, they can click on each title that will take them to another screen with more complete information.
 
 I'm using these powerful libraries
 
