@@ -34,6 +34,7 @@ export default ({ location }) => {
             type={movie.Type}
             year={movie.Year}
             title={movie.Title}
+            imdbID={movie.imdbID}
           />
         );
       });
