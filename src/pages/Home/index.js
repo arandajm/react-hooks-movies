@@ -29,7 +29,6 @@ export default ({ history }) => {
     history.push(`/results?movieName=${searchText}`);
   };
 
-  console.log(searchText);
   return (
     <Container className={classes.container}>
       <Card className={classes.cardContainer}>
